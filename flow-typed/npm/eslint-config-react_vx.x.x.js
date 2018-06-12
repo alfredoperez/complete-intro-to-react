@@ -23,7 +23,6 @@ declare module 'eslint-config-react' {
  * needed.
  */
 
-
 // Filename aliases
 declare module 'eslint-config-react/index' {
   declare module.exports: $Exports<'eslint-config-react'>;

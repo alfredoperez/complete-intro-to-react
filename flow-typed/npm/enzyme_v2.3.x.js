@@ -47,7 +47,7 @@ declare module 'enzyme' {
     prop(key: string): any;
     key(): string;
     simulate(event: string, ...args: Array<any>): this;
-    setState(state: Object, callback?: Function): this,
+    setState(state: Object, callback?: Function): this;
     setProps(props: Object): this;
     setContext(context: Object): this;
     instance(): React$Component<any, any, any>;
@@ -78,6 +78,9 @@ declare module 'enzyme' {
   }
 
   declare export function shallow(node: React$Element<any>, options?: { context?: Object }): ShallowWrapper;
-  declare export function mount(node: React$Element<any>, options?: { context?: Object, attachTo?: HTMLElement, childContextTypes?: Object }): ReactWrapper;
+  declare export function mount(
+    node: React$Element<any>,
+    options?: { context?: Object, attachTo?: HTMLElement, childContextTypes?: Object }
+  ): ReactWrapper;
   declare export function render(node: React$Element<any>, options?: { context?: Object }): CheerioWrapper;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import Search from '../Search';
-import  ShowCard from '../ShowCard';
+import ShowCard from '../ShowCard';
 import { shallow } from 'enzyme';
 import preload from '../../data.json';
 
@@ -17,14 +17,11 @@ test('Search should render correct amount of shows', () => {
 test('Search should render correct amount of shows based on search terms', () => {
   const component = shallow(<Search />);
   const searchWord = 'black';
-  component.find('input').simulate('change', {target:{value:searchWord}});
+  component.find('input').simulate('change', { target: { value: searchWord } });
 
- const showCount  = preload.shows
-    .filter(
-      show =>
-        `${show.title} ${show.description}`.toUpperCase()
-          .indexOf(searchWord.toUpperCase()) >=0
-    ).length;
+  const showCount = preload.shows.filter(
+    show => `${show.title} ${show.description}`.toUpperCase().indexOf(searchWord.toUpperCase()) >= 0
+  ).length;
 
   expect(component.find(ShowCard).length).toEqual(showCount);
 });

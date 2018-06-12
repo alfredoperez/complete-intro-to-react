@@ -1,10 +1,9 @@
 // flow-typed signature: 8db7b853f57c51094bf0ab8b2650fd9c
 // flow-typed version: ab8db5f14d/react-redux_v5.x.x/flow_>=v0.30.x
 
-import type { Dispatch, Store } from 'redux'
+import type { Dispatch, Store } from 'redux';
 
 declare module 'react-redux' {
-
   /*
 
     S = State
@@ -19,7 +18,11 @@ declare module 'react-redux' {
 
   declare type MapDispatchToProps<A, OP: Object, DP: Object> = ((dispatch: Dispatch<A>, ownProps: OP) => DP) | DP;
 
-  declare type MergeProps<SP, DP: Object, OP: Object, P: Object> = (stateProps: SP, dispatchProps: DP, ownProps: OP) => P;
+  declare type MergeProps<SP, DP: Object, OP: Object, P: Object> = (
+    stateProps: SP,
+    dispatchProps: DP,
+    ownProps: OP
+  ) => P;
 
   declare type Context = { store: Store<*, *> };
 
@@ -36,11 +39,11 @@ declare module 'react-redux' {
   declare type ConnectedComponentClass<OP, P, Def, St> = Class<ConnectedComponent<OP, P, Def, St>>;
 
   declare type Connector<OP, P> = {
-    (component: StatelessComponent<P>): ConnectedComponentClass<OP, P, void, void>;
-    <Def, St>(component: Class<React$Component<Def, P, St>>): ConnectedComponentClass<OP, P, Def, St>;
+    (component: StatelessComponent<P>): ConnectedComponentClass<OP, P, void, void>,
+    <Def, St>(component: Class<React$Component<Def, P, St>>): ConnectedComponentClass<OP, P, Def, St>
   };
 
-  declare class Provider<S, A> extends React$Component<void, { store: Store<S, A>, children?: any }, void> { }
+  declare class Provider<S, A> extends React$Component<void, { store: Store<S, A>, children?: any }, void> {}
 
   declare type ConnectOptions = {
     pure?: boolean,
@@ -94,5 +97,4 @@ declare module 'react-redux' {
     mergeProps: MergeProps<SP, DP, OP, P>,
     options?: ConnectOptions
   ): Connector<OP, P>;
-
 }

@@ -10,4 +10,3 @@ declare module 'react-addons-perf' {
   declare function printExclusive(): void;
   declare function printOperations(): void;
 }
-

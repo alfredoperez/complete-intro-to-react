@@ -71,11 +71,10 @@
     "react-test-renderer": "15.5.4",
     "webpack-dev-server": "2.4.5"
   },
-  "prettier":{
-    "printWidth": 120,
+  "prettier": {
+    "printWidth": 90,
     "tabWidth": 2,
-    "singleQuote": true,
-    "parser": "flow"
+    "singleQuote": true
   },
   "name": "complete-intro-to-react",
   "version": "3.0.0",
