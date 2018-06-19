@@ -18,6 +18,7 @@ const Image = styled.img`
   width: 46%;
   float: left;
 `;
+
 class ShowCard extends Component {
   shouldComponentUpdate() {
     return false;
